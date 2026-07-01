@@ -1,0 +1,1 @@
+# geometric-invariants-of-plane-algebraic-curves
