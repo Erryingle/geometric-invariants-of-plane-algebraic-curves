@@ -1,0 +1,483 @@
+/* ===== Базовые настройки ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 30px 40px;
+}
+
+/* ===== Хедер ===== */
+header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ===== Секция ввода ===== */
+.input-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #334155;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-row input[type="text"] {
+    flex: 1;
+    min-width: 280px;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Inter', monospace;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+}
+
+.input-row input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+.input-row input[type="text"]::placeholder {
+    color: #94a3b8;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+.btn-primary:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.equation-help {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.equation-help code {
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* ===== Примеры ===== */
+.examples {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.examples-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.examples-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.example-tag {
+    padding: 6px 14px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', monospace;
+}
+
+.example-tag:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+/* ===== Результаты ===== */
+.results-section {
+    margin-top: 24px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.result-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.result-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+/* ===== Карточка графика ===== */
+.plot-container {
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plot-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.plot-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== Карточка информации ===== */
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item:last-of-type {
+    border-bottom: none;
+}
+
+.info-item .label {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.info-item .value {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 15px;
+}
+
+.equation-display {
+    font-family: 'Inter', monospace;
+    background: #f1f5f9;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.euler-value {
+    font-size: 20px;
+    color: #3b82f6;
+    background: #eff6ff;
+    padding: 2px 14px;
+    border-radius: 8px;
+}
+
+.divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 12px 0;
+}
+
+/* ===== Список особых точек ===== */
+.points-list {
+    margin: 8px 0 4px 0;
+    padding: 0;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.point-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Inter', monospace;
+    background: #f8fafc;
+    margin-bottom: 3px;
+}
+
+.point-item .coords {
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.point-item .type-badge {
+    padding: 1px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.type-badge.node {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.type-badge.cusp {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.type-badge.isolated {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.type-badge.degenerate {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* ===== Легенда ===== */
+.legend {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.legend h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.legend-items {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    font-size: 13px;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-item.node { color: #dc2626; }
+.legend-item.cusp { color: #d97706; }
+.legend-item.isolated { color: #7c3aed; }
+
+/* ===== Ошибка ===== */
+.error-message {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #dc2626;
+}
+
+.error-icon {
+    font-size: 20px;
+}
+
+/* ===== Лоадер ===== */
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Футер ===== */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.footer-math {
+    font-family: 'Inter', monospace;
+    font-size: 13px;
+    margin-top: 4px;
+    color: #cbd5e1;
+}
+
+/* ===== Highlight для эйлеровой характеристики ===== */
+.highlight {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin-top: 4px;
+}
+
+/* ===== Скроллбар для точек ===== */
+.points-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.points-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.points-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 12px 16px 30px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row input[type="text"] {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .result-card {
+        padding: 16px;
+    }
+
+    .examples-grid {
+        gap: 4px;
+    }
+
+    .example-tag {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}

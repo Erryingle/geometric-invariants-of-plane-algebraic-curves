@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрические инварианты алгебраических кривых</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📐 Геометрические инварианты</h1>
+            <p class="subtitle">Анализ особых точек алгебраических кривых F(x,y) = 0</p>
+        </header>
+
+        <main>
+            <!-- Форма ввода -->
+            <section class="input-section">
+                <form id="analysis-form">
+                    <div class="form-group">
+                        <label for="equation">Уравнение кривой:</label>
+                        <div class="input-row">
+                            <input
+                                type="text"
+                                id="equation"
+                                name="equation"
+                                placeholder="Например: x**2 + y**2 - 1"
+                                value="x**3 + y**3 - 3*x*y"
+                                required
+                            >
+                            <button type="submit" id="analyze-btn">
+                                <span class="btn-text">🔍 Анализировать</span>
+                                <span class="loader" style="display: none;"></span>
+                            </button>
+                        </div>
+                        <div class="equation-help">
+                            <small>Используйте <strong>x</strong> и <strong>y</strong>, операции: <code>+ - * / **</code></small>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Примеры -->
+                <div class="examples">
+                    <span class="examples-label">Быстрый старт:</span>
+                    <div id="examples-list" class="examples-grid">
+                        <!-- Загружаются через JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Результаты -->
+            <section id="results" class="results-section" style="display: none;">
+                <div class="results-grid">
+                    <!-- График -->
+                    <div class="result-card plot-card">
+                        <h3>📊 График кривой</h3>
+                        <div id="plot-container" class="plot-container">
+                            <img id="plot-image" src="" alt="График кривой">
+                        </div>
+                        <div class="plot-actions">
+                            <button id="download-btn" class="btn-secondary">💾 Скачать PNG</button>
+                        </div>
+                    </div>
+
+                    <!-- Информация -->
+                    <div class="result-card info-card">
+                        <h3>📋 Результаты анализа</h3>
+                        <div class="info-item">
+                            <span class="label">Уравнение:</span>
+                            <span id="display-equation" class="value equation-display"></span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="label">Особые точки:</span>
+                            <span id="points-count" class="value"></span>
+                        </div>
+
+                        <div id="points-list" class="points-list">
+                            <!-- Динамически заполняется -->
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-item">
+                            <span class="label">Связных компонент:</span>
+                            <span id="components-count" class="value"></span>
+                        </div>
+
+                        <div class="info-item highlight">
+                            <span class="label">Эйлерова характеристика χ:</span>
+                            <span id="euler-value" class="value euler-value"></span>
+                        </div>
+
+                        <!-- Классификация -->
+                        <div class="legend">
+                            <h4>Типы особых точек:</h4>
+                            <div class="legend-items">
+                                <span class="legend-item node">● Узел (node)</span>
+                                <span class="legend-item cusp">▲ Касп (cusp)</span>
+                                <span class="legend-item isolated">■ Изолированная</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ошибка -->
+            <div id="error-message" class="error-message" style="display: none;">
+                <span class="error-icon">❌</span>
+                <span id="error-text"></span>
+            </div>
+        </main>
+
+        <footer>
+            <p>Проект по математике и информатике · 2 семестра</p>
+            <p class="footer-math">F(x,y) = 0 → особые точки → эйлерова характеристика</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
